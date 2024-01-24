@@ -19,7 +19,7 @@ int main()
 {
     string word, exist[5000], cord[5000][4];
     string fline, dict[5000];
-    ifstream file("wordlist.txt");
+    ifstream file("include/wordlist.txt");
     int rows, columns, count = 0, s = 0;
     cout << "Enter rows: ";
     cin >> rows;
@@ -115,7 +115,7 @@ int main()
             word = word_search[i * k];
             if(i < rows - 1 && k < columns - 1)
             {
-                for(int j = i + 1, l = k + 1; j < rows, l < columns ; j++, l++)
+                for(int j = i + 1, l = k + 1; j < rows & l < columns ; j++, l++)
                 {
                     word += (word_search[j * l]);
                     if(scan(word, dict, s))
@@ -132,7 +132,7 @@ int main()
             word = word_search[i * k];
             if(i > 0 && k > 0)
             {
-                for(int j = i - 1, l = k - 1; j >= 0, l >= 0 ; j-- , l--)
+                for(int j = i - 1, l = k - 1; j >= 0 & l >= 0 ; j-- , l--)
                 {
                     word += (word_search[j * l]);
                     if(scan(word, dict, s))
@@ -149,7 +149,7 @@ int main()
             word = word_search[i * k];
             if(i > 0 && k < columns - 1)
             {
-                for(int j = i - 1, l = k + 1; j >= 0, l < columns; j-- , l++)
+                for(int j = i - 1, l = k + 1; j >= 0 & l < columns; j-- , l++)
                 {
                     word += (word_search[j * l]);
                     if(scan(word, dict, s))
@@ -166,7 +166,7 @@ int main()
             word = word_search[i * k];
             if(i < rows - 1 && k > 0)
             {
-                for(int j = i + 1, l = k - 1; j < rows , l >= 0; j++ , l--)
+                for(int j = i + 1, l = k - 1; j < rows & l >= 0; j++ , l--)
                 {
                     word += (word_search[j * l]);
                     if(scan(word, dict, s))
